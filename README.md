@@ -16,7 +16,7 @@ struct Settings
 ### Soil moisture sensor corrosion problem
 After some time you realize that the sensor provides drier and drier results, even if the soil is wet. It is because of corrosion caused by electrolysis. The copper atoms on the positive electrode are being ionised, transported via the soil's water content across to the negative electrode where they are being deposited and returning to being copper atoms. This explains why the negative electrode looks surprisingly clean for having been buried - the top layer of atoms are recently deposited and likely very pure (in picture). To avoid this you have some choices:
 * Use AC instead of DC
-* Use capacitive sensors instead of resistance (they are more expensive)
+* Use [capacitive sensors](https://www.aliexpress.com/item/NEW-Capacitive-soil-moisture-sensor-not-easy-to-corrode-wide-voltage-wire-for-arduino/32832538686.html) instead of resistance (they are more expensive)
 * When use DC, power on sensor only when data are readed. It will reduce the speed of corrosion (as electrolytic corrosion will be faster than that of unpowered copper) but it will not prevent it in the long-run. I use MOSFET for switch ON/OFF sensors
 
 ![Electrolysis corrosion](https://github.com/vitzaoral/soil-moisture-system/blob/master/schema/corrosion.jpg)

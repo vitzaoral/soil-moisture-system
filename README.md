@@ -25,6 +25,7 @@ After some time you realize that the sensor provides drier and drier results, ev
 * [Wemos D1 Mini](https://www.aliexpress.com/item/D1-mini-V2-Mini-NodeMcu-4M-bytes-Lua-WIFI-Internet-of-Things-development-board-based-ESP8266/32681374223.html)
 * [7x Soil Moisture Sensor](https://www.aliexpress.com/item/Smart-Electronics-Soil-Moisture-Hygrometer-Detection-Humidity-Sensor-Module-For-arduino-Development-Board-DIY-Robot-Smart/32562744759.html)
 * [Mosfet IRF520](https://www.aliexpress.com/item/20PCS-IRF520-TO-220-IRF520N-TO220-IRF520NPBF-free-shipping/32715603916.html)
+* [74HC4051 Multiplexer](https://www.aliexpress.com/item/10PCS-LOT-CD4051BE-CD4051-4051BE-4051-DIP16-new-and-original-IC/32807746646.html)
 
 ### Schema:
 ![Schema](https://github.com/vitzaoral/soil-moisture-system/blob/master/schema/soil-moisture-system-schema.jpg)

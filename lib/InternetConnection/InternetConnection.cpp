@@ -4,6 +4,7 @@
 
 // Blynk virtual pins:
 // V1 - water level (long)
+// V20 - water distance (long)
 // V2 - pump 1
 // V3 - pump 2
 
@@ -18,6 +19,14 @@
 // V17 - humidity
 // V18 - presure
 // V19 - meteo data status
+
+// WIFI - balcony system
+// V21 - IP address
+// V22 - WIFI signal strength
+
+// WIFI - bedroom system
+// V23 - IP address
+// V24 - WIFI signal strength
 
 WiFiClient client;
 Settings settings;
@@ -50,8 +59,10 @@ bool InternetConnection::initialize(void)
     }
     Serial.println("");
     Serial.println("WiFi connected");
-    Serial.println("IP address: ");
+    Serial.print("IP address: ");
     Serial.println(WiFi.localIP());
+    Serial.print("Wifi signal stregth: ");
+    Serial.println(WiFi.RSSI());
 
     return true;
 }
@@ -71,7 +82,15 @@ bool InternetConnection::initializeBlynk(void)
     }
 
     Serial.println(Blynk.connected() ? "Blynk connected" : "Timeout on or internet connection");
-    return Blynk.connected();
+    bool connected = Blynk.connected();
+
+    if (connected)
+    {
+        // send local IP address and WIFI signal stregth
+        Blynk.virtualWrite(V23, WiFi.localIP().toString());
+        Blynk.virtualWrite(V24, WiFi.RSSI());
+    }
+    return connected;
 }
 
 void InternetConnection::runBlynk(void)
@@ -79,8 +98,9 @@ void InternetConnection::runBlynk(void)
     Blynk.run();
 }
 
-bool InternetConnection::sendSoilMoistureToBlynk(SoilMoistureStatus status) {
-if (Blynk.connected())
+bool InternetConnection::sendSoilMoistureToBlynk(SoilMoistureStatus status)
+{
+    if (Blynk.connected())
     {
         Blynk.virtualWrite(V9, status.A);
         Blynk.virtualWrite(V10, status.B);

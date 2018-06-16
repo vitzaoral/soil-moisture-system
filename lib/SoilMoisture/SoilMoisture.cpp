@@ -26,7 +26,7 @@ void SoilMoisture::changeMux(int c, int b, int a)
 int SoilMoisture::getMoistureValueFromAnalogValue(float value)
 {
     // map(hodnota, minimumPůvodníStupnice, maximumPůvodníStupnice, minimumNovéStupnice, maximumNovéStupnice);
-    int result = map(value, 1024, 300, 0, 100);
+    int result = map(value, 1024, 380, 0, 100);
     Serial.print(" Humidity: ");
     Serial.println(result);
     return result;
@@ -38,7 +38,7 @@ SoilMoistureStatus SoilMoisture::getSoilMoistureStatus()
 
     digitalWrite(MOSFET, HIGH);
     Serial.println("Soil moisture sensors ON");
-    delay(2000);
+    delay(100);
 
     changeMux(LOW, LOW, LOW);
     int value = analogRead(ANALOG_INPUT); //Value of the sensor connected Option 0 pin of Mux

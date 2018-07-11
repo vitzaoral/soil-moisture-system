@@ -31,7 +31,9 @@ After some time you realize that the sensor provides drier and drier results, ev
 ![Schema](https://github.com/vitzaoral/soil-moisture-system/blob/master/schema/soil-moisture-system-schema.jpg)
 
 ### PCB circuit:
-TODO
+![PCB 1](https://github.com/vitzaoral/soil-moisture-system/blob/master/schema/pcb_1.jpg)
+
+![PCB 2](https://github.com/vitzaoral/soil-moisture-system/blob/master/schema/pcb_2.jpg)
 
 ### Blynk:
-TODO
+![Blynk](https://github.com/vitzaoral/soil-moisture-system/blob/master/schema/blynk.png)

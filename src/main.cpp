@@ -63,17 +63,13 @@ void setup()
     Serial.begin(9600);
     delay(100);
     SoilMoisture::initialize();
-    // initializeInternetConnection();
-    // startTimers();
+    initializeInternetConnection();
+    startTimers();
 }
 
 void loop()
 {
-    // updateTimers();
-    // connection.runBlynk();
-    //  connection.handleOTA();
-    SoilMoisture::getSoilMoistureStatus();
-    delay(3000);
-    Serial.println();
-    Serial.println();
+    updateTimers();
+    connection.runBlynk();
+    connection.handleOTA();
 }
